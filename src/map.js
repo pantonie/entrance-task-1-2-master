@@ -1,6 +1,6 @@
-import { loadList, loadDetails } from './api';
-import { getDetailsContentLayout } from './details';
-import { createFilterControl } from './filter';
+import {loadList, loadDetails} from './api';
+import {getDetailsContentLayout} from './details';
+import {createFilterControl} from './filter';
 
 export function initMap(ymaps, containerId) {
   const myMap = new ymaps.Map(containerId, {
@@ -20,7 +20,7 @@ export function initMap(ymaps, containerId) {
 
 
   objectManager.clusters.options.set({
-      clusterIconLayout: 'default#pieChart'
+    clusterIconLayout: 'default#pieChart'
   });
 
   loadList().then(data => {
