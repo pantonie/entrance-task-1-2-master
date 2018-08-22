@@ -12,14 +12,16 @@ export function initMap(ymaps, containerId) {
   const objectManager = new ymaps.ObjectManager({
     clusterize: true,
     gridSize: 64,
-    clusterIconLayout: 'default#pieChart',
     clusterDisableClickZoom: false,
     geoObjectOpenBalloonOnClick: false,
     geoObjectHideIconOnBalloonOpen: false,
     geoObjectBalloonContentLayout: getDetailsContentLayout(ymaps)
   });
 
-  objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
+
+  objectManager.clusters.options.set({
+      clusterIconLayout: 'default#pieChart'
+  });
 
   loadList().then(data => {
     objectManager.add(data);
